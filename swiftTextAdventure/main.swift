@@ -6,11 +6,11 @@
 //
 
 // Text Adventure Game
+let start = "WELCOME TO THE INDIANA JONES TEXT ADVENTURE GAME! Please press return to start the game."
+
 let enter = "Please enter 1 or 2 for your answer"
 
 let gameOver = "Sorry GAME OVER!"
-
-let start = "WELCOME TO THE INDIANA JONES TEXT ADVENTURE GAME!"
 
 // NOTE: \n creates a new line (AKA Line break) when displayed in the debug console
 let newLine = "\n"
@@ -37,3 +37,63 @@ let gameOver5 = "You looked at the Ark and melted like butter in a microwave! " 
 
 let win = "When the Ark opened the villains were literally melted! It was crazy, but thankfully you had your eyes closed and were not affected." + newLine + "CONGRATULATIONS! THE VILLAINS HAVE BEEN DEFEATED AND YOU HAVE WON!!!"
 
+// Displays the starting/welcome game message to the user
+print(start)
+
+// Waits for the user the press return before continuing with the game
+// NOTE: Setting the readLine response to the response variable. However, the response variable is not used. This is only done to remove the warning.
+let response = readLine()
+
+// Displays the first question to the user
+print(q1)
+
+// Sets the value of the userInput variable to the user's entry
+// NOTE: readLine() accepts user input/response
+var userInput = readLine()
+// print(userInput)
+
+// NESTED IF ELSE STATEMENTS
+// 1ST IF ELSE Statement
+// NOTE: readLine() returns the value entered as a string which is why it is being compared to the string of "2" instead of the Int of 2
+if (userInput == "2"){
+    print(q2)
+    // The value for the userInput variable is updated using the user's readLine response
+    userInput = readLine()
+    
+    // 2ND IF ELSE Statement
+    if (userInput == "1"){
+        print(q3)
+        userInput = readLine()
+        
+        // 3RD IF ELSE Statement
+        if (userInput == "1"){
+            print(q4)
+            userInput = readLine()
+            
+            // 4TH IF ELSE Statement
+            if (userInput == "2"){
+                print(q5)
+                userInput = readLine()
+                
+                // 5TH IF ELSE Statement
+                if (userInput == "1"){
+                    print(win)
+                } else {
+                    print(gameOver5)
+                }
+                
+            } else {
+                print(gameOver4)
+            }
+            
+        } else {
+            print(gameOver3)
+        }
+        
+    } else {
+        print(gameOver2)
+    }
+    
+} else {
+    print(gameOver1)
+}
